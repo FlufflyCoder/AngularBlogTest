@@ -1,0 +1,34 @@
+<div class="content-heading">Articles</div>
+<!-- Zero Configuration-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table datatable="" class="table table-striped" *ngIf="articles && articles.length">
+                <thead>
+                    <tr>
+                        <th class="wd-md">Article title</th>
+                        <th>Author</th>
+                        <th>Subject</th>
+                        <th>Subtitle</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of articles">
+                        <td><a [routerLink]="['/articles',article.ID]">{{ article.Title }}
+                        </a></td>
+                        <td>{{ article.User.FirstName }} {{ article.User.LastName }}
+                        </td>
+                        <td>
+                            <a class="mr-sm label label-primary" href="">{{ article.Subject.Title }}</a>
+                        </td>
+                        <td> {{ article.SubTitle }}
+                        </td>
+                        <td>{{ article.Description }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

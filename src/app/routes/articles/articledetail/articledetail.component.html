@@ -1,0 +1,22 @@
+        <div class="panel panel-default" *ngIf='article; else no_article'>
+            <div class="panel-heading">
+                <div class="bb">
+                    <h2 class="text-lg">{{ article.Title }}</h2>
+                    <h2><small>{{ article.SubTitle }}</small></h2>
+                    <p class="clearfix">
+                        <span class="pull-left">
+                     <small class="mr-sm">{{ article.Subject.Title }} By <a href="">{{ article.User.FirstName }} {{ article.User.LastName }}</a>
+                     </small>
+                     </span>
+                    </p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <p class="lead text-center">{{ article.Description }}</p>
+                <hr/>
+                <p>{{ article.Content }}</p>
+                
+                <br/>
+            </div>
+        </div>
+        <ng-template #no_article>There's no article to show, here.</ng-template>
